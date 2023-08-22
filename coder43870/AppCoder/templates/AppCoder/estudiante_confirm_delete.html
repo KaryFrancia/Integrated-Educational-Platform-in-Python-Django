@@ -1,0 +1,16 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block titulo %} ESTA ES LA PAGINA DE ESTUDIANTES {% endblock %}
+{% block contenido_que_cambia %} 
+<style>
+    h2 {color: rebeccapurple;}
+    h1 {color: lightskyblue}
+</style>
+
+<h1> LISTADO DE ESTUDIANTES </h1>
+<form method="post">{% csrf_token %}
+    estas seguro que deseas eliminar el estudiante "{{ object }}"?
+    <input type="submit" value="SI">
+</form>
+
+{% endblock %}

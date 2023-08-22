@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 from .forms import *
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 # Create your views here.
 
 def crear_curso(request):
@@ -65,7 +67,7 @@ def cursos(request):
     return render(request, "AppCoder/cursos.html", {"formulario": formulario_curso, "cursos": cursos})
 
 
-def estudiantes(request):
+#def estudiantes(request):
     if request.method == 'POST':
         form = EstudianteForm(request.POST)
         if form.is_valid():
@@ -196,3 +198,31 @@ def editarProfesor(request, id):
         formulario_profesor=ProfesorForm(initial={"nombre":profesor.nombre, "apellido":profesor.apellido, "email":profesor.email, "profesion":profesor.profesion})
     return render(request,"AppCoder/editarProfesor.html", {"formulario":formulario_profesor, "profesor":profesor})
 
+
+def estudiantes(request):
+    return render(request, "AppCoder/estudiantes.html")
+
+class EstudianteList(ListView):
+    model= Estudiante
+    template_name= "AppCoder/estudiantes.html"
+
+class EstudianteCreacion(CreateView):
+    model= Estudiante
+    success_url= reverse_lazy("estudiante_list")
+    fields=['nombre', 'apellido', 'email']
+
+
+class EstudianteDetalle(DetailView):
+    model=Estudiante
+    template_name="AppCoder/estudiante_detalle.html"
+
+
+class EstudianteDelete(DeleteView):
+    model=Estudiante
+    success_url= reverse_lazy("estudiante_list")
+
+
+class EstudianteUpdate(UpdateView):
+    model= Estudiante
+    success_url= reverse_lazy("estudiante_list")
+    fields=['nombre', 'apellido', 'email']

@@ -17,4 +17,9 @@ urlpatterns = [
     path('buscar_entregables/', buscar_entregables, name="buscar_entregables"),
     path('eliminarProfesor/<id>', eliminarProfesor, name="eliminarProfesor"),
     path('editarProfesor/<id>', editarProfesor, name="editarProfesor"),
+    path('estudiante/list/', EstudianteList.as_view(), name="estudiante_list"),
+    path('estudiante/nuevo/', EstudianteCreacion.as_view(), name="estudiante_crear"),
+    path('estudiante/<pk>', EstudianteDetalle.as_view(), name="estudiante_detalle"),
+    path('estudiante/borrar/<pk>', EstudianteDelete.as_view(), name="estudiante_borrar"),
+    path('estudiante/editar/<pk>', EstudianteUpdate.as_view(), name="estudiante_editar"),
 ]
