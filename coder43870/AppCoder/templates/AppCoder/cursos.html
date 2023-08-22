@@ -1,0 +1,44 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block titulo %} ESTA ES LA PAGINA DE CURSOS {% endblock %}
+{% block contenido_que_cambia %}
+<style>
+    h2 {color: rebeccapurple;}
+    h1 {color: lightskyblue}
+</style>
+    <h2> {{ mensaje }} </h3>
+    <h1> Formulario para guardar un curso </h1>
+    <form action="{% url 'cursos' %}" method = "post"> {% csrf_token %}
+
+       {{ formulario.as_p }}
+
+        <input type="submit" value="GUARDAR CURSO">
+    </form>
+
+    
+
+<h1>CURSOS</h1>
+<table>
+    <thead>
+        <tr>
+
+            <th>Nombre</th>
+            <th>Comision</th>
+            <th>OPCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for curso in cursos %}
+        <tr>
+            <td>
+                {{ curso.nombre }}
+            </td>
+            <td>
+                {{ curso.comision }}
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block titulo %} ESTA ES LA PAGINA DE BUSQUEDAS{% endblock %}
+{% block contenido_que_cambia %} 
+<style>
+    h2 {color: rebeccapurple;}
+    h1 {color: lightskyblue}
+</style>
+<h2>{{ mensaje }}</h2>
+
+
+<h1> Buscar cursos </h1>
+<form action="{% url 'buscar_comision' %}" method = "GET">
+    <input type="number" name="comision" id="comision" placeholder="INSERTE COMISION">
+    <input type="submit" value="BUSCAR COMISION">
+</form>
+
+  {% if cursos %}
+    <h3> Resultados de la búsqueda: </h3>
+    <ul>
+        {% for curso in cursos %}
+        <li>{{ curso }}</li>
+        {% endfor %}
+    </ul>  
+   {% endif %}
+
+
+<h1>Buscar estudiantes </h1>
+<form method="get" action="{% url 'buscar_estudiantes' %}"> {% csrf_token %}
+    <input type="text" name="email" id="email" placeholder="INSERTE EMAIL">
+    <input type="submit" value="BUSCAR ESTUDIANTE">
+</form>
+     
+  {% if estudiantes %}
+    <h3>Resultados de la búsqueda:</h3>
+    <ul>
+      {% for estudiante in estudiantes %}
+        <li>{{ estudiante }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+
+<h1>Buscar profesores </h1>
+<form method="get" action="{% url 'buscar_profesores' %}"> {% csrf_token %}
+    <input type="text" name="profesion" id="profesion" placeholder="INSERTE PROFESION">
+    <input type="submit" value="BUSCAR PROFESOR">
+  </form>
+       
+    {% if profesores %}
+      <h3>Resultados de la búsqueda:</h3>
+      <ul>
+        {% for profesor in profesores %}
+          <li>{{ profesor }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+   
+
+<h1>Buscar pagos</h1>
+<form method="get" action="{% url 'buscar_pagos' %}"> {% csrf_token %}
+    <input type="text" name="cliente" id="cliente" placeholder="INSERTE EL CLIENTE">
+    <input type="submit" value="BUSCAR PAGO">
+</form>
+
+  {% if pagos %}
+    <h3>Resultados de la búsqueda:</h3>
+    <ul>
+      {% for pago in pagos %}
+        <li>{{ pago }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+
+<h1>Buscar entregables </h1>
+<form method="get" action="{% url 'buscar_entregables' %}"> {% csrf_token %}
+    <input type="text" name="nombre" id="nombre" placeholder="INSERTE NOMBRE">
+    <input type="submit" value="BUSCAR ENTREGABLE">
+</form>
+       
+  {% if entregables %}
+    <h3>Resultados de la búsqueda:</h3>
+    <ul>
+      {% for entregable in entregables %}
+        <li>{{ entregable }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  
+{% endblock %}

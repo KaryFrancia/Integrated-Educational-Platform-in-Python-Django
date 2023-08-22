@@ -1,0 +1,47 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block titulo %} ESTA ES LA PAGINA DE ENTREGABLES {% endblock %}
+{% block contenido_que_cambia %} 
+<style>
+    h2 {color: rebeccapurple;}
+    h1 {color: lightskyblue}
+</style>
+<h2> {{ mensaje }} </h2>
+<h1> Formulario para registrar un entregable </h1>
+<form action="{% url 'entregables' %}" method = "post"> {% csrf_token %}
+
+   {{ formulario.as_p }}
+
+    <input type="submit" value="REALIZAR ENTREGA">
+</form>
+
+<h1> ENTREGABLES </h1>
+<table>
+    <thead>
+        <tr>
+
+            <th>Nombre</th>
+            <th>Fecha de entrega</th>
+            <th>Entregado</th>
+            <th>OPCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entregable in entregables %}
+        <tr>
+            <td>
+                {{ entregable.nombre }}
+            </td>
+            <td>
+                {{ entregable.fecha_entrega }}
+            </td>
+            <td>
+                {{ entregable.entregado }}
+            </td>
+                       
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

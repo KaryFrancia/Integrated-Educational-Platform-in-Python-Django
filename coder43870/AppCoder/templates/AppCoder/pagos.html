@@ -1,0 +1,47 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block titulo %} ESTA ES LA PAGINA DE PAGOS {% endblock %}
+{% block contenido_que_cambia %} 
+<style>
+    h2 {color: rebeccapurple;}
+    h1 {color: lightskyblue}
+</style>
+<h3> {{ mensaje }} </h3>
+<h1> Formulario para agregar un pago </h1>
+<form action="{% url 'pagos' %}" method = "post"> {% csrf_token %}
+    
+    {{ formulario.as_p }}
+    
+    <input type="submit" value="AGREGAR PAGO">
+</form>
+
+<h1> PAGOS </h1>
+<table>
+    <thead>
+        <tr>
+
+            <th>Cliente</th>
+            <th>Monto</th>
+            <th>Fecha del pago</th>
+            <th>OPCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pago in pagos %}
+        <tr>
+            <td>
+                {{ pago.cliente }}
+            </td>
+            <td>
+                {{ pago.monto }}
+            </td>
+            <td>
+                {{ pago.fecha_pago }}
+            </td>
+                       
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
