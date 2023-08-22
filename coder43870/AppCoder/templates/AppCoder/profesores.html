@@ -41,10 +41,18 @@
             </td>
             <td>
                 {{ profesor.profesion }}
+            </td>
+            <td>
+                <a class="btn btn-danger" href="{% url 'eliminarProfesor' profesor.id %}">Eliminar</a>
+                <a class="btn btn-success" href="{% url 'editarProfesor' profesor.id %}">Editar</a>
             </td>           
         </tr>
         {% endfor %}
     </tbody>
 </table>
+
+
+<h3>{{ mensaje }}</h3>
+
 
 {% endblock %}

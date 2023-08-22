@@ -167,3 +167,32 @@ def buscar_entregables(request):
         return render(request, 'AppCoder/busqueda.html', {'entregables': entregables})
     else:
        return render(request, 'AppCoder/busqueda.html', {"mensaje": "No ingresaste información"})
+
+def eliminarProfesor(request, id):
+    profesor=Profesor.objects.get(id=id)
+    profesor.delete()
+    profesores=Profesor.objects.all()
+    formulario_profesor=ProfesorForm()
+    mensaje="Profesor eliminado"
+    return render(request,"AppCoder/profesores.html", {"mensaje":mensaje, "formulario":formulario_profesor, "profesores":profesores})
+
+def editarProfesor(request, id):
+    profesor=Profesor.objects.get(id=id)
+    if request.method=="POST":
+        form=ProfesorForm(request.POST)
+        if form.is_valid():
+            info=form.cleaned_data
+            profesor.nombre=info["nombre"]
+            profesor.apellido=info["apellido"]
+            profesor.email=info["email"]
+            profesor.profesion=info["profesion"]
+            profesor.save()
+            mensaje="Profesor editado"
+            profesores=Profesor.objects.all()
+            formulario_profesor=ProfesorForm()
+            return render(request,"AppCoder/profesores.html", {"mensaje":mensaje, "formulario": formulario_profesor, "profesores": profesores})
+    else:
+        
+        formulario_profesor=ProfesorForm(initial={"nombre":profesor.nombre, "apellido":profesor.apellido, "email":profesor.email, "profesion":profesor.profesion})
+    return render(request,"AppCoder/editarProfesor.html", {"formulario":formulario_profesor, "profesor":profesor})
+
