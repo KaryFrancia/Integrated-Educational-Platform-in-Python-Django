@@ -18,7 +18,7 @@ registrar cursos y pagos, así como realizar búsquedas en la base de datos.
 
 ## Instalación
 
-1. Clona este repositorio a tu máquina local: git clone https://github.com/KaryFrancia/Tercera_pre_entrega_Francia.git
+1. Clona este repositorio a tu máquina local: git clone https://github.com/KaryFrancia/Tercera_pre_entrega_Francia_coderhouse.git
 2. Entra al directorio del proyecto: cd coder43870
 3. Crea un entorno virtual y actívalo:
 - Windows:
