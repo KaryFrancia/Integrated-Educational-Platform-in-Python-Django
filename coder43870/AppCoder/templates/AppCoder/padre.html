@@ -30,8 +30,8 @@
                 <a class="btn btn-info" href="{% url 'pagos' %}">Pagos</a>
                 <p>Bienvenido {{ user.username }}</p>            
                 <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
-                <a class="btn btn-success" href="{% url 'editarPerfil' %}">editar Perfil</a>
-                <a class="btn btn-success" href="{% url 'agregarAvatar' %}">agregar Avatar</a>
+                <a class="btn btn-success" href="{% url 'editarPerfil' %}">Editar Perfil</a>
+                <a class="btn btn-success" href="{% url 'agregarAvatar' %}">Agregar Avatar</a>
                 <img src="{{ avatar}}" alt="Avatar" style="width:60px;height:60px;" />
                 {% else %}
                 <a class="btn btn-success" href="{% url 'login' %}">Login</a>
