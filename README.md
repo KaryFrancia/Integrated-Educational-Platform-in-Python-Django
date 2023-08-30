@@ -17,7 +17,7 @@ This project is a web application on an Integrated Educational platform in Pytho
 
 ## Installation
 
-1. Clone this repository to your local machine: git clone https://github.com/KaryFrancia/Tercera_pre_entrega_Francia_coderhouse.git
+1. Clone this repository to your local machine: git clone https://github.com/KaryFrancia/Integrated-Educational-Platform-in-Python-Django.git
 2. Navigate to the project directory: cd coder43870
 3. Create and activate a virtual environment:
 - Windows:
