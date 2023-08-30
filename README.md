@@ -35,7 +35,7 @@ This project is a web application on an Integrated Educational platform in Pytho
 
 ## Usage
 
-1. Run the Django development server: python manage.py runserver
+1. Run the Django development server:  ```python manage.py runserver```
 2. Access the application in your browser by visiting: `http://127.0.0.1:8000/`
 
 ## Features
