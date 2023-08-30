@@ -1,15 +1,14 @@
-# TERCERA PRE-ENTREGA DE KARY FRANCIA
-Proyecto python, comision43870-CODERHOUSE
+# Integrated Educational Platform in Python Django
+Python project, comision43870-CODERHOUSE
 
-Este proyecto es una aplicación web desarrollada en Django que brinda diversos cursos. Permite a los usuarios agregar estudiantes, profesores, entregables, 
-registrar cursos y pagos, así como realizar búsquedas en la base de datos.
+This project is a web application on an Integrated Educational platform in Python Django for Management of Students, Teachers, Courses, Deliverables and Payments. It allows the administrator and staff users to add students, teachers, deliverables, register courses and payments, as well as perform database searches. Also, they can edit and delete them if necessary. Each user has their own profile and avatar, which can also be edited or deleted.
 ## Contenido
 
-- [Requisitos](#requisitos)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Funcionalidades](#funcionalidades)
-- [Contribución](#contribución)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contribution](#contribution)
 
 ## Requisitos
 
