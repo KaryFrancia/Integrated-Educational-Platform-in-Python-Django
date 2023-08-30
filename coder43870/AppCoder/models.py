@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Curso(models.Model):
@@ -36,3 +36,9 @@ class Pago(models.Model):
     fecha_pago = models.DateField()
     def __str__(self):
         return f"Pago de {self.cliente} - {self.fecha_pago}, monto: {self.monto}"
+
+class Avatar(models.Model):
+    imagen = models.ImageField(upload_to="avatars")
+    user=models.ForeignKey(User, on_delete=models.CASCADE,  null=True, blank=True)
+    def __str__(self):
+        return f"{self.user} - {self.imagen}"
