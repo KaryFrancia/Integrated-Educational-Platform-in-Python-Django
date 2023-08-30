@@ -10,16 +10,16 @@ This project is a web application on an Integrated Educational platform in Pytho
 - [Features](#features)
 - [Contribution](#contribution)
 
-## Requisitos
+## Requirements
 
 - Python 3.11.4 (python --version)
 - Django 4.2.3 (python -m django --version)
 
-## Instalación
+## Installation
 
-1. Clona este repositorio a tu máquina local: git clone https://github.com/KaryFrancia/Tercera_pre_entrega_Francia_coderhouse.git
-2. Entra al directorio del proyecto: cd coder43870
-3. Crea un entorno virtual y actívalo:
+1. Clone this repository to your local machine: git clone https://github.com/KaryFrancia/Tercera_pre_entrega_Francia_coderhouse.git
+2. Navigate to the project directory: cd coder43870
+3. Create and activate a virtual environment:
 - Windows:
   ```
   python -m venv myenv
@@ -31,29 +31,34 @@ This project is a web application on an Integrated Educational platform in Pytho
   source myenv/bin/activate
   ```
 
-4. Instala las dependencias: pip install -r requirements.txt
+4. Install the dependencies: pip install -r requirements.txt
 
-## Uso
+## Usage
 
-1. Ejecuta el servidor de desarrollo de Django: python manage.py runserver
-2. Accede a la aplicación en tu navegador visitando: `http://127.0.0.1:8000/`
+1. Run the Django development server: python manage.py runserver
+2. Access the application in your browser by visiting: `http://127.0.0.1:8000/`
 
-## Funcionalidades
+## Features
 
-1. **Página de Inicio**: La página principal de la aplicación.
-2. **Buscar**: Busca cursos, estudiantes, profesores, pagos y entregables en la base de datos.
-3. **Profesores**: Agrega nuevos docentes y visualiza los docentes actuales.
-4. **Estudiantes**: Registra nuevos estudiantes y visualiza los estudiantes actuales.
-5. **Cursos**: Guarda nuevos cursos y visualiza los cursos actuales.
-6. **Entregable**: Registra nuevos entregables y visualiza los entregables actuales.
-7. **Pagos**: Agrega nuevos pagos y visualiza los pagos actuales.
+1. **Página de Inicio**: The main page of the application. On the home page you will find two buttons: login and register.
+2. **Login**: Enter the platform with the username and password belonging to a staff member.
+3. **Register**: Register a new staff user who does not have their own account.
+4. **Buscar**: Search for courses, students, teachers, payments, and deliverables in the database.
+5. **Profesores**: Add new teachers, edit and delete them, and view the current teachers.
+6. **Estudiantes**: Register new students, edit and delete them, and view the current students.
+7. **Cursos**: Save new courses, edit and delete them, and view the current courses.
+8. **Entregable**: Register new deliverables, edit and delete them, and view the current deliverables.
+9. **Pagos**: Add new payments, edit and delete, and view the current payments.
+10. **Logout**: Exit platform.
+11. **Editar Perfil**: Modify or update the personal information of a registered user on the platform.
+12. **Agregar Avatar**: Attach an image or graphic representation that serves as a visual identification of the user on the platform.
+   
+## Contribution
 
-## Contribución
+If you wish to contribute to this project, follow these steps:
 
-Si deseas contribuir a este proyecto, sigue estos pasos:
-
-1. Crea un fork del repositorio.
-2. Crea una rama para tus cambios: `git checkout -b feature/nueva-funcionalidad`
-3. Haz tus cambios y realiza commits: `git commit -m "Agrega nueva funcionalidad"`
-4. Sube tus cambios a tu fork: `git push origin feature/nueva-funcionalidad`
-5. Abre una solicitud pull en GitHub.
+1. Fork the repository.
+2. Create a branch for your changes: `git checkout -b feature/new-feature`
+3. Make your changes and commit them: `git commit -m "Add new feature"`
+4. Push your changes to your fork: `git push origin feature/new-feature`
+5. Open a pull request on GitHub.
